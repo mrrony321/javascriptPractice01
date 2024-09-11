@@ -232,3 +232,32 @@ console.log(finalBills)
 
 // tipsAndBillCalculator(bill)
 // console.log(tips,finalBills)
+
+
+// assignment 4
+
+var mark = {
+    height: 1.69,
+    mass: 78,
+    calBMI : function(){
+        this.bmi = this.mass / (this.height * this.height) 
+    }
+}
+
+var john = {
+    height: 1.95,
+    mass: 92,
+    calBMI : function(){
+        this.bmi = this.mass / (this.height * this.height) 
+    }
+}
+
+john.calBMI()
+mark.calBMI()
+console.log(john)
+console.log(mark)
+
+john.bmi > mark.bmi ? console.log('johns bmi is higher than marks bmi') : john.bmi < mark.bmi ? console.log('johns bmi is lower than marks bmi') : console.log('its tie')
+// console.log(markBmi, johnBmi)
+// console.log('Is Mark\'s BMI is higher than John\'s? '+isMarkHasHighBmi)
+// console.log("Is Mark's BMI is higher than John's? "+isMarkHasHighBmi)
