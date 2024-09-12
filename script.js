@@ -261,3 +261,114 @@ john.bmi > mark.bmi ? console.log('johns bmi is higher than marks bmi') : john.b
 // console.log(markBmi, johnBmi)
 // console.log('Is Mark\'s BMI is higher than John\'s? '+isMarkHasHighBmi)
 // console.log("Is Mark's BMI is higher than John's? "+isMarkHasHighBmi)
+
+
+//----loops
+
+
+//for loop
+
+// for(var i =0;i<10;i++){
+//     console.log(i)
+// }
+// for(var i =0;i<10;i+=2){
+//     console.log(i)
+// }
+
+var array1 = ['john','will','go',1997,'office']
+
+for(var i = 0; i<array1.length;i++){
+    // console.log(array1[i])
+}
+
+// array1.map((item,index)=>{
+//     console.log(item,index)
+// })
+
+//while loops
+
+// var count = 0
+// while (count < array1.length){
+//     console.log(array1[count], '?')
+//     count++
+// }
+
+//continue and break statement
+for(var i = 0; i<array1.length;i++){
+    if(typeof(array1[i]) !== 'string') continue
+    console.log(array1[i])
+}
+
+for(var i = 0; i<array1.length;i++){
+    if(typeof(array1[i]) !== 'string') break
+    console.log(array1[i])
+}
+
+
+
+// coding chalange 5
+var finalBillNew = []
+var tipsNew = []
+var johnBill = {
+    name: 'john',
+    bill : [124,48,268,180,42],
+    calTips : function(bills){
+        for(var count = 0; count<bills.length ; count++){
+            var parcentage
+            if(bills[count] < 50){
+                parcentage =  0.2
+            }else if(50<=bills[count] && bills[count]<=200){
+                parcentage =  0.15
+            }else{
+                parcentage =  0.1
+            }
+            tipsNew.push(parcentage * bills[count])
+            finalBillNew.push((parcentage * bills[count])+bills[count])
+        }
+        
+        
+    }
+}
+
+johnBill.calTips(johnBill.bill)
+console.log(finalBillNew, tipsNew)
+
+var markBill = {
+    name: 'mark',
+    bill : [77,375,110,45],
+    
+}
+
+var tipAverageCalculator = function(bills){
+    var sum = 0
+    for(var count = 0; count<bills.length ; count++){
+        var parcentage
+        if(bills[count] < 100){
+            parcentage =  0.2
+        }else if(100<=bills[count] && bills[count]<=300){
+            parcentage =  0.10
+        }else{
+            parcentage =  0.25
+        }
+        sum = sum + (parcentage * bills[count])
+        // finalBillNew.push((parcentage * bills[count])+bills[count])
+    }
+
+    return sum/bills.length
+}
+
+function tipsAverage(tips){
+    var sum = 0
+    for(var count=0;count<tips.length;count++){
+        sum = sum + tips[count]
+    }
+    return sum / tips.length
+}
+
+var averageTipMark = tipAverageCalculator(markBill.bill)
+var averageTipJohn = tipsAverage(tipsNew)
+
+averageTipJohn>averageTipMark ? console.log('john\'s family paid the highest tips which is '+ averageTipJohn): console.log('mark\'s family paid the highest tips which is '+ averageTipMark)
+
+
+
